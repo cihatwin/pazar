@@ -1,5 +1,5 @@
 import "server-only";
-import { cert, getApps, initializeApp } from "firebase-admin/app";
+import { cert, getApps, initializeApp, applicationDefault } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { getAuth } from "firebase-admin/auth";
 import { getStorage } from "firebase-admin/storage";
@@ -45,9 +45,11 @@ export function initAdmin() {
     });
   }
 
-  throw new Error(
-    "Firebase Admin başlatılamadı. Local için FIRESTORE_EMULATOR_HOST, prod için FIREBASE_ADMIN_KEY_JSON gerekli."
-  );
+  // Cloud environments (App Hosting, Cloud Run, vs) fallback
+  return initializeApp({
+    credential: applicationDefault(),
+    projectId: projectId,
+  });
 }
 
 export function adminDb() {
