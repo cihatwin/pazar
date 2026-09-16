@@ -1,0 +1,7 @@
+.shell { min-height: 68vh; display: grid; place-items: center; padding: 72px 20px; background: #f4f6ef; color: #11140f; }
+.card { width: min(720px, 100%); padding: clamp(32px, 7vw, 72px); border: 1px solid #d9ded2; border-radius: 32px; background: #fff; text-align: center; box-shadow: 0 24px 70px rgba(17, 20, 15, .08); }
+.icon { width: 64px; height: 64px; margin: 0 auto 24px; display: grid; place-items: center; border-radius: 20px; background: #dfff45; color: #11140f; }
+.eyebrow { margin: 0 0 12px; color: #60704d; font-size: 12px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+.title { margin: 0; font-size: clamp(36px, 7vw, 68px); line-height: .98; letter-spacing: -.06em; }
+.text { max-width: 540px; margin: 20px auto 0; color: #697064; font-size: 16px; line-height: 1.7; }
+.link { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; margin-top: 28px; padding: 0 22px; border-radius: 999px; background: #11140f; color: #fff; font-weight: 800; }

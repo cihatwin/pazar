@@ -1,0 +1,11 @@
+.nav { display: flex; align-items: center; justify-content: center; gap: 4px; min-width: 0; }
+.navLink {
+  position: relative; min-height: 46px; padding: 0 18px; display: inline-flex; align-items: center; justify-content: center;
+  color: #9da696; font-size: 13px; font-weight: 800; letter-spacing: -.015em; border-radius: 14px;
+  transition: color .2s ease, background .2s ease, transform .2s ease;
+}
+.navLink::after { content: ""; position: absolute; left: 20px; right: 20px; bottom: 7px; height: 2px; border-radius: 9px; background: #dfff45; transform: scaleX(0); transition: transform .22s ease; }
+.navLink:hover { color: #fff; background: rgba(255,255,255,.055); transform: translateY(-1px); }
+.navActive { color: #fff; background: rgba(223,255,69,.075); }
+.navActive::after { transform: scaleX(1); }
+@media (max-width: 860px) { .nav { display: none; } }

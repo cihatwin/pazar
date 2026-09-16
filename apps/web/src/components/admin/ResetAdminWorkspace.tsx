@@ -1,0 +1,26 @@
+import Link from "next/link";
+import { ArrowUpRight, CheckCircle2, DatabaseZap, Plus, ShieldCheck } from "lucide-react";
+import styles from "./ResetAdminWorkspace.module.css";
+
+const labels: Record<string,string> = {
+  "/admin/categories":"Kategori Merkezi", "/admin/subcategories":"Alt Kategori Merkezi", "/admin/stock":"Stok Merkezi", "/admin/products/import":"Toplu Ürün Yükleme", "/admin/mobile-product-drafts":"Mobil Taslaklar", "/admin/showcase-products":"Vitrin Ürünleri", "/admin/orders":"Sipariş Merkezi", "/admin/refunds":"İade Talepleri", "/admin/customers":"Müşteri Merkezi", "/admin/accounting":"Marketplace Muhasebe", "/admin/payment":"Ödeme Ayarları", "/admin/installments":"Taksit Ayarları", "/admin/HomeSectionsOrderPage":"Anasayfa Düzeni", "/admin/home-sections":"Anasayfa Genel", "/admin/home-promos":"Slider Yönetimi", "/admin/home-popular":"Popüler Etiketler", "/admin/media":"Medya Merkezi", "/admin/newsletter":"E-Bülten", "/admin/discounts":"İndirim Yönetimi", "/admin/campaigns":"Kampanya Merkezi", "/admin/social":"Sosyal Akış", "/admin/home-marquee":"Kayan Yazı", "/admin/reviews":"Ürün Yorumları", "/admin/testimonials":"Vitrin Yorumları", "/admin/home-promo":"Promo Slider", "/admin/analytics":"Marketplace Analitiği", "/admin/tracking":"Reklam Kodları", "/admin/marketing-checklist":"Reklam Hazırlığı", "/admin/wheel":"Çark Merkezi", "/admin/wheel/campaigns":"Çark Kampanyaları", "/admin/wheel/rewards":"Çark Ödülleri", "/admin/wheel/coupons":"Kuponlar", "/admin/wheel/spins":"Çevirimler", "/admin/support":"Canlı Destek", "/admin/appointments":"Özel Randevular", "/admin/Shipping":"Kargo Ayarları", "/admin/rates-provider":"Döviz Kurları", "/admin/rate-health":"Kur Sağlığı", "/admin/market-pricing":"Piyasa Analizi", "/admin/stock-alerts":"Stok Bildirimleri", "/admin/notifications":"Push Bildirimleri", "/admin/settings":"Site Ayarları", "/admin/shop-settings":"Mağaza Ayarları", "/admin/settings/hero-slides":"Slider Ayarları", "/admin/altinci-kuyumculuk":"Hakkımızda", "/admin/refund-settings":"İade Ayarları", "/admin/pages":"Sayfa Yönetimi", "/admin/footer":"Footer Yönetimi", "/admin/seo":"SEO Merkezi", "/admin/maintenance":"Bakım Modu", "/admin/system":"Sistem Merkezi",
+};
+
+function group(path:string) {
+  if (["categories","subcategories","stock","products","showcase"].some((x)=>path.toLowerCase().includes(x))) return { eyebrow:"KATALOG OPERASYONU", description:"Yeni marketplace kataloğu için temiz bir yönetim alanı.", cards:[["KAYIT","0"],["AKTİF","0"],["BEKLEYEN","0"]], features:["Yeni kategori yapısı","Satıcı bazlı kapsam","Onaylı katalog bağlantısı"] };
+  if (["orders","refund","customers","accounting","payment","installments"].some((x)=>path.toLowerCase().includes(x))) return { eyebrow:"TİCARET OPERASYONU", description:"Yeni sipariş, tahsilat ve müşteri operasyonları için ayrılmış sıfır alan.", cards:[["YENİ","0"],["AÇIK","0"],["TAMAMLANAN","0"]], features:["Marketplace siparişleri","Satıcı hakedişleri","Yeni müşteri kayıtları"] };
+  if (["support","appointments","shipping","rates","notifications"].some((x)=>path.toLowerCase().includes(x))) return { eyebrow:"OPERASYON MERKEZİ", description:"Yeni PAZAR. operasyonlarını eski kayıtlara karıştırmadan yönet.", cards:[["AÇIK","0"],["BEKLEYEN","0"],["BUGÜN","0"]], features:["Canlı durum takibi","Yeni işlem kuyruğu","Yetkili ekip akışı"] };
+  if (["settings","seo","footer","maintenance","system","pages","home","media","social"].some((x)=>path.toLowerCase().includes(x))) return { eyebrow:"İÇERİK & SİSTEM", description:"PAZAR. markası için sıfırdan oluşturulacak yapılandırma alanı.", cards:[["YAYIN","0"],["TASLAK","0"],["REVİZYON","0"]], features:["Yeni marka ayarları","Temiz içerik kaynağı","Sürüm kontrollü yayın"] };
+  return { eyebrow:"BÜYÜME & PAZARLAMA", description:"Yeni marketplace kampanya ve büyüme araçları için temiz operasyon alanı.", cards:[["AKTİF","0"],["TASLAK","0"],["ERİŞİM","0"]], features:["Yeni kampanyalar","Satıcı segmentleri","Marketplace performansı"] };
+}
+
+export default function ResetAdminWorkspace({ pathname }:{ pathname:string }) {
+  const title = labels[pathname] || "Yeni Yönetim Alanı";
+  const data = group(pathname);
+  return <div className={styles.page}>
+    <section className={styles.hero}><div><span>{data.eyebrow} • PAZAR.</span><h1>{title}</h1><p>{data.description}</p><div className={styles.status}><i/><b>Temiz başlangıç aktif</b><small>Eski veri bağlantısı yok</small></div></div><DatabaseZap/></section>
+    <section className={styles.metrics}>{data.cards.map(([label,value])=><article key={label}><span>{label}</span><strong>{value}</strong><small>Yeni sistem verisi</small></article>)}</section>
+    <section className={styles.workspace}><div><span>HAZIR ÇALIŞMA ALANI</span><h2>İlk kayıt için hazır.</h2><p>Bu modül yeni veri modeliyle kurulacak. Eski siteye ait hiçbir kayıt burada gösterilmiyor.</p><div className={styles.links}><Link href="/admin"><ShieldCheck/> Kontrol merkezine dön</Link><Link href="/admin/sellers">Satıcıları yönet <ArrowUpRight/></Link></div></div><ul>{data.features.map((feature)=><li key={feature}><CheckCircle2/><span>{feature}</span><small>Yeni altyapıya hazır</small></li>)}</ul></section>
+    <div className={styles.bottom}><Plus/><span>{title}</span><b>0 kayıt • temiz veri alanı</b></div>
+  </div>;
+}

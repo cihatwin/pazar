@@ -1,0 +1,146 @@
+.page { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+/* ── Store header ── */
+.storeHeader {
+  position: relative; margin-bottom: 2rem; border-radius: 18px; overflow: hidden;
+  background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06);
+}
+.banner {
+  height: 14rem; background: linear-gradient(135deg, rgba(168,133,72,.15), rgba(168,133,72,.05));
+  background-size: cover; background-position: center;
+}
+.storeInfo {
+  display: flex; align-items: flex-end; gap: 1.25rem;
+  padding: 0 2rem 1.5rem; margin-top: -2.5rem; position: relative; z-index: 1;
+  flex-wrap: wrap;
+}
+.logo {
+  width: 5rem; height: 5rem; border-radius: 14px; overflow: hidden;
+  border: 3px solid rgba(10,10,10,.9); background: rgba(255,255,255,.05);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.logo img { width: 100%; height: 100%; object-fit: cover; }
+.logo svg { width: 2rem; height: 2rem; color: rgba(255,255,255,.15); }
+.storeMeta { flex: 1; min-width: 12rem; }
+.storeMeta h1 { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 0 0 .2rem; }
+.storeMeta p { font-size: .78rem; color: rgba(255,255,255,.45); margin: 0; }
+.badges {
+  display: flex; gap: .5rem; flex-wrap: wrap;
+}
+.badge {
+  display: flex; align-items: center; gap: .3rem;
+  font: 600 .6rem/1 var(--font-mono, monospace); letter-spacing: .06em;
+  padding: .3rem .6rem; border-radius: 6px;
+  background: rgba(34,197,94,.08); color: #4ade80;
+}
+.badge svg { width: 12px; height: 12px; }
+.badgeCategory {
+  background: rgba(168,133,72,.1); color: #c9a855;
+}
+.badgeCity {
+  background: rgba(59,130,246,.08); color: #60a5fa;
+}
+
+/* ── Store description ── */
+.description {
+  padding: 0 0 1.5rem;
+  font-size: .82rem; line-height: 1.6; color: rgba(255,255,255,.5);
+  max-width: 42rem;
+}
+
+/* ── Stats ── */
+.stats {
+  display: flex; gap: 1.5rem; padding: 0 0 2rem; flex-wrap: wrap;
+}
+.stats span {
+  display: flex; flex-direction: column; gap: .15rem;
+  background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06);
+  border-radius: 10px; padding: .75rem 1.25rem;
+}
+.stats small { font: 500 .55rem/1 var(--font-mono, monospace); letter-spacing: .08em; color: rgba(255,255,255,.3); }
+.stats b { font-size: 1.1rem; font-weight: 700; color: #fff; }
+
+/* ── Toolbar ── */
+.toolbar {
+  display: flex; align-items: center; gap: .75rem;
+  padding: 0 0 1.25rem; flex-wrap: wrap;
+}
+.searchBox {
+  display: flex; align-items: center; gap: .5rem;
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px; padding: .45rem .75rem; flex: 1; min-width: 12rem;
+}
+.searchBox svg { color: rgba(255,255,255,.25); flex-shrink: 0; }
+.searchBox input {
+  background: none; border: none; outline: none; color: #fff;
+  font-size: .8rem; width: 100%;
+}
+.searchBox input::placeholder { color: rgba(255,255,255,.25); }
+
+/* ── Product grid ── */
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: .75rem;
+}
+.card {
+  background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px; overflow: hidden; transition: border-color .2s, transform .2s;
+}
+.card:hover { border-color: rgba(255,255,255,.12); transform: translateY(-2px); }
+.cardImage {
+  aspect-ratio: 1; overflow: hidden; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,.02); text-decoration: none;
+}
+.cardImage img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.card:hover .cardImage img { transform: scale(1.03); }
+.cardImage svg { width: 2rem; height: 2rem; color: rgba(255,255,255,.08); }
+.cardBody { padding: .75rem 1rem; display: flex; flex-direction: column; gap: .3rem; }
+.cardBody h2 {
+  font-size: .82rem; font-weight: 600; color: #fff; margin: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.cardBody h2 a { color: inherit; text-decoration: none; }
+.cardBody p { font-size: .7rem; color: rgba(255,255,255,.35); margin: 0; }
+.cardFooter {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .5rem 1rem .75rem;
+}
+.cardFooter strong { font-size: .9rem; font-weight: 700; color: #c9a855; }
+.cardFooter a {
+  display: flex; align-items: center; justify-content: center;
+  width: 2rem; height: 2rem; border-radius: 8px;
+  background: rgba(168,133,72,.1); color: #c9a855;
+  text-decoration: none; transition: background .2s;
+}
+.cardFooter a:hover { background: rgba(168,133,72,.2); }
+
+/* ── Empty / Not found ── */
+.empty {
+  display: flex; flex-direction: column; align-items: center; gap: .6rem;
+  padding: 4rem 2rem; text-align: center;
+}
+.empty svg { width: 2.5rem; height: 2.5rem; color: rgba(255,255,255,.12); }
+.empty b { font-size: .9rem; color: rgba(255,255,255,.6); }
+.empty p { font-size: .78rem; color: rgba(255,255,255,.35); max-width: 22rem; }
+.empty a {
+  display: inline-flex; align-items: center; gap: .4rem;
+  color: #c9a855; font-size: .78rem; text-decoration: none;
+  margin-top: .5rem;
+}
+
+.skeleton {
+  aspect-ratio: 1; border-radius: 14px;
+  background: linear-gradient(90deg, rgba(255,255,255,.02) 25%, rgba(255,255,255,.06) 50%, rgba(255,255,255,.02) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .page { padding: 0 1rem 3rem; }
+  .storeInfo { padding: 0 1.25rem 1.25rem; }
+  .banner { height: 10rem; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}

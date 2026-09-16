@@ -1,0 +1,25 @@
+"use client";
+import Link from "next/link";
+import { useCallback,useEffect,useMemo,useState } from "react";
+import { Archive,ArrowUpRight,Boxes,CheckCircle2,Clock3,PackagePlus,Pencil,RefreshCw,Search,Send } from "lucide-react";
+import { useSellerPanel } from "@/components/seller/SellerPanelShell";
+import { sellerRequest } from "@/lib/sellerClient";
+import { sellerProductStatusLabel,type SellerProduct,type SellerProductStatus } from "@/lib/sellerTypes";
+import styles from "./products.module.css";
+const filters:Array<{key:"all"|SellerProductStatus;label:string}>=[{key:"all",label:"Tümü"},{key:"draft",label:"Taslak"},{key:"pending_review",label:"İncelemede"},{key:"approved",label:"Yayında"},{key:"rejected",label:"Düzeltme"},{key:"archived",label:"Arşiv"}];
+export default function SellerProductsPage(){
+  const{approved}=useSellerPanel();const[items,setItems]=useState<SellerProduct[]>([]);const[loading,setLoading]=useState(approved);const[error,setError]=useState("");const[q,setQ]=useState("");const[filter,setFilter]=useState<"all"|SellerProductStatus>("all");const[busy,setBusy]=useState("");
+  const load=useCallback(async()=>{if(!approved){setLoading(false);return}setLoading(true);setError("");try{const data=await sellerRequest<{items:SellerProduct[]}>("/api/seller/products");setItems(data.items||[])}catch(e){setError((e as Error).message)}finally{setLoading(false)}},[approved]);
+  useEffect(()=>{void load()},[load]);
+  const visible=useMemo(()=>items.filter(item=>(filter==="all"||item.status===filter)&&(!q||`${item.title} ${item.sku} ${item.category}`.toLocaleLowerCase("tr").includes(q.toLocaleLowerCase("tr")))),[items,filter,q]);
+  async function action(id:string,action:"submit"|"archive"|"restore"){setBusy(id);setError("");try{const data=await sellerRequest<{status:SellerProductStatus}>(`/api/seller/products/${id}`,{method:"PATCH",body:JSON.stringify({action})});setItems(list=>list.map(x=>x.id===id?{...x,status:data.status}:x))}catch(e){setError((e as Error).message)}finally{setBusy("")}}
+  const counts={total:items.filter(x=>x.status!=="archived").length,live:items.filter(x=>x.status==="approved").length,pending:items.filter(x=>x.status==="pending_review").length};
+  return <div className={styles.page}>
+    <header className={styles.hero}><div><span>İŞLETME KATALOĞU • 02</span><h1>Ürün Merkezi</h1><p>Taslaklarını hazırla, incelemeye gönder ve yayın durumunu takip et.</p></div><div className={styles.heroStats}><span><small>TOPLAM</small><b>{counts.total}</b></span><span><small>YAYINDA</small><b>{counts.live}</b></span><span><small>İNCELEME</small><b>{counts.pending}</b></span></div><Link href="/satici/panel/urunler/yeni"><PackagePlus size={17}/>Yeni ürün<ArrowUpRight size={16}/></Link></header>
+    {!approved?<div className={styles.notice}><Clock3/><div><b>Ürün araçları onay sonrasında açılır.</b><span>Süper Admin işletmeni doğruladığında buradan ürün yükleyebilirsin.</span></div></div>:null}{error?<div className={styles.error}>{error}</div>:null}
+    <section className={styles.toolbar}><div className={styles.search}><Search size={16}/><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Ürün adı, SKU veya kategori ara"/></div><div className={styles.filters}>{filters.map(x=><button key={x.key} className={filter===x.key?styles.filterActive:""} onClick={()=>setFilter(x.key)}>{x.label}</button>)}</div><button onClick={load} aria-label="Yenile"><RefreshCw size={16}/></button></section>
+    <section className={styles.list}>{loading?<div className={styles.state}><RefreshCw className={styles.spin}/><b>Katalog yükleniyor</b></div>:visible.length===0?<div className={styles.state}><Boxes/><b>{items.length?"Bu filtrede ürün yok":"Kataloğun henüz boş"}</b><p>İlk ürününü sihirbazla birkaç adımda hazırlayabilirsin.</p><Link href="/satici/panel/urunler/yeni">İlk ürünü oluştur</Link></div>:visible.map(item=><article key={item.id}>
+      <div className={styles.image}>{item.images?.[0]?<img src={item.images[0]} alt=""/>:<Boxes/>}</div><div className={styles.identity}><span className={styles[item.status]}>{sellerProductStatusLabel[item.status]}</span><h2>{item.title}</h2><p>{item.category} · {item.brand||"Markasız"}</p><small>SKU {item.sku}</small></div><div className={styles.data}><span><small>FİYAT</small><b>{new Intl.NumberFormat("tr-TR",{style:"currency",currency:"TRY"}).format(item.price)}</b></span><span><small>STOK</small><b>{item.stock}</b></span></div><div className={styles.rowActions}>{["draft","rejected"].includes(item.status)?<><Link href={`/satici/panel/urunler/${item.id}`}><Pencil size={15}/>Düzenle</Link><button disabled={busy===item.id} onClick={()=>action(item.id,"submit")}><Send size={15}/>İncelemeye gönder</button></>:null}{item.status!=="archived"?<button disabled={busy===item.id} onClick={()=>action(item.id,"archive")}><Archive size={15}/></button>:<button disabled={busy===item.id} onClick={()=>action(item.id,"restore")}><CheckCircle2 size={15}/>Geri al</button>}</div>{item.moderationNote?<p className={styles.moderation}>Süper Admin notu: {item.moderationNote}</p>:null}
+    </article>)}</section>
+  </div>
+}

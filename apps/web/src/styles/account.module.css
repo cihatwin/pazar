@@ -1,0 +1,142 @@
+.accountHeroCompact {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 20px;
+  border: 1px solid #e7eaf3;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #f8faff 0%, #f3f6ff 100%);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.05);
+}
+
+.accountHeroCompactLeft {
+  min-width: 0;
+}
+
+.accountHeroCompactEyebrow {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6366f1;
+  margin-bottom: 8px;
+}
+
+.accountHeroCompactTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.accountHeroCompactTitle {
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 36px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-weight: 900;
+  color: #0b132a;
+}
+
+.accountHeroCompactName {
+  color: #4338ca;
+}
+
+.accountHeroCompactStatus {
+  min-height: 34px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.accountHeroCompactStatusOk {
+  background: #e8f7f0;
+  color: #0f8a5f;
+  border: 1px solid #bde8d3;
+}
+
+.accountHeroCompactStatusWarn {
+  background: #fff4e8;
+  color: #c56b13;
+  border: 1px solid #f2d2ac;
+}
+
+.accountHeroCompactStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(110px, 1fr));
+  gap: 10px;
+}
+
+.accountHeroCompactStat {
+  min-width: 110px;
+  padding: 12px 14px;
+  border: 1px solid #e5e9f2;
+  border-radius: 18px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.accountHeroCompactStat span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #667085;
+}
+
+.accountHeroCompactStat strong {
+  font-size: 18px;
+  line-height: 1.15;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+}
+
+.accountHeroCompactStatWide strong {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1100px) {
+  .accountHeroCompact {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .accountHeroCompactStats {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .accountHeroCompact {
+    padding: 16px;
+    border-radius: 20px;
+    gap: 14px;
+  }
+
+  .accountHeroCompactTitle {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .accountHeroCompactStats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .accountHeroCompactStat {
+    min-width: 0;
+    border-radius: 16px;
+  }
+}
+
+/* PAZAR. account overview — final theme */
+.accountHeroCompact{position:relative;isolation:isolate;overflow:hidden;margin-bottom:16px;padding:23px 25px;border:1px solid rgba(217,255,63,.13);border-radius:25px;background:radial-gradient(circle at 12% 0,rgba(217,255,63,.14),transparent 34%),linear-gradient(135deg,#141a13,#090d09);box-shadow:0 24px 60px rgba(19,27,16,.17)}.accountHeroCompact::after{content:"";position:absolute;z-index:-1;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(90deg,#000,transparent 72%)}.accountHeroCompactEyebrow{margin-bottom:9px;color:#d9ff3f;font-size:9px;letter-spacing:.2em}.accountHeroCompactTitle{color:#f6f8f2;font-size:clamp(25px,2.4vw,34px);letter-spacing:-.05em}.accountHeroCompactName{color:#d9ff3f}.accountHeroCompactStatus{min-height:29px;padding:0 10px;font-size:9.5px}.accountHeroCompactStatusOk{border-color:rgba(86,232,139,.2);background:rgba(86,232,139,.08);color:#82f0aa}.accountHeroCompactStatusWarn{border-color:rgba(255,190,92,.2);background:rgba(255,190,92,.08);color:#ffd08a}.accountHeroCompactStats{gap:8px}.accountHeroCompactStat{min-width:104px;padding:11px 12px;border:1px solid rgba(255,255,255,.075);border-radius:15px;background:rgba(255,255,255,.035)}.accountHeroCompactStat span{color:#8a9486;font-size:9.5px}.accountHeroCompactStat strong{color:#f4f7ef;font-size:14px}.accountHeroCompactStatWide{min-width:145px}
+@media(max-width:760px){.accountHeroCompact{padding:19px;border-radius:21px}.accountHeroCompactTitle{font-size:27px}.accountHeroCompactStats{grid-template-columns:repeat(2,1fr)}.accountHeroCompactStatWide{grid-column:1/-1}.accountHeroCompactStat{min-width:0}}

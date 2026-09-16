@@ -1,0 +1,16 @@
+.right { display: flex; align-items: center; justify-content: flex-end; gap: 7px; min-width: 0; }
+.iconBtn {
+  position: relative; width: 46px; height: 46px; flex: 0 0 46px; display: grid; place-items: center; padding: 0;
+  border: 1px solid rgba(255,255,255,.1); border-radius: 15px; background: rgba(255,255,255,.045); color: #d7ddd2;
+  cursor: pointer; box-shadow: inset 0 1px 0 rgba(255,255,255,.04); transition: transform .2s ease, color .2s ease, border-color .2s ease, background .2s ease;
+}
+.iconBtn::before { content: ""; position: absolute; inset: 5px; border: 1px solid transparent; border-radius: 11px; transition: border-color .2s ease; }
+.iconBtn:hover { transform: translateY(-2px); color: #dfff45; background: rgba(223,255,69,.07); border-color: rgba(223,255,69,.28); }
+.iconBtn:hover::before { border-color: rgba(223,255,69,.09); }
+.iconBtn:focus-visible { outline: 3px solid rgba(223,255,69,.22); outline-offset: 2px; }
+.iconBtn:active { transform: scale(.96); }
+.iconSvg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.badge { position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 4px; display: grid; place-items: center; border: 2px solid #0b0e0a; border-radius: 99px; background: #dfff45; color: #11140f; font-size: 9px; font-weight: 950; }
+.langWrap { margin-left: 4px; max-width: 94px; overflow: hidden; border-radius: 15px; }
+@media (max-width: 640px) { .right { gap: 4px; } .iconBtn { width: 38px; height: 38px; flex-basis: 38px; border-radius: 12px; } .iconSvg { width: 17px; height: 17px; } .langWrap { max-width: 76px; margin-left: 1px; } }
+@media (max-width: 420px) { .right .iconBtn:nth-child(2) { display: none; } }

@@ -1,0 +1,19 @@
+.wrap { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.menuBtn {
+  position: relative; width: 50px; height: 50px; flex: 0 0 50px; display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,.12); border-radius: 17px; background: linear-gradient(145deg,#181d16,#0f120e);
+  color: #f7f9f2; cursor: pointer; box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 10px 28px rgba(0,0,0,.25);
+  transition: transform .2s ease, border-color .2s ease, color .2s ease;
+}
+.menuBtn::after { content: ""; position: absolute; right: 7px; top: 7px; width: 5px; height: 5px; border-radius: 50%; background: #dfff45; box-shadow: 0 0 12px #dfff45; }
+.menuBtn:hover { transform: translateY(-2px); color: #dfff45; border-color: rgba(223,255,69,.38); }
+.menuBtn:focus-visible { outline: 3px solid rgba(223,255,69,.25); outline-offset: 2px; }
+.menuIconSvg { width: 21px; height: 21px; }
+.brand { min-width: 0; display: flex; align-items: center; gap: 12px; color: #fff; }
+.brandLogo { height: 42px; width: auto; max-width: 170px; object-fit: contain; }
+.brandMark { width: 50px; height: 50px; flex: 0 0 50px; display: grid; place-items: center; border-radius: 17px; background: #dfff45; color: #10140e; font-size: 18px; font-weight: 950; letter-spacing: -.05em; box-shadow: 0 0 0 1px rgba(223,255,69,.18), 0 12px 32px rgba(180,220,27,.13); }
+.brandCopy { display: grid; gap: 4px; min-width: 0; }
+.brandCopy strong { font-size: 18px; line-height: 1; letter-spacing: .18em; font-weight: 900; white-space: nowrap; }
+.brandCopy span { color: #7f8878; font-size: 8px; line-height: 1; letter-spacing: .2em; font-weight: 800; white-space: nowrap; }
+@media (max-width: 1080px) { .brandCopy { display: none; } }
+@media (max-width: 640px) { .wrap { gap: 7px; } .menuBtn,.brandMark { width: 42px; height: 42px; flex-basis: 42px; border-radius: 14px; } .brandMark { font-size: 16px; } }
