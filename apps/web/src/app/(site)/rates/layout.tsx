@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     "altın alış satış",
   ],
   alternates: {
-    canonical: "https://6nci.com/rates",
+    canonical: "https://pazar-16c7b.web.app/rates",
   },
   openGraph: {
     title: "Güncel Altın Kuru | 6'ncı Kuyumculuk",
     description:
       "Anlık altın kuru ve gram altın fiyatları. 14, 18, 22 ayar altın alış-satış fiyatları.",
-    url: "https://6nci.com/rates",
+    url: "https://pazar-16c7b.web.app/rates",
     type: "website",
   },
 };

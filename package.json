@@ -5,16 +5,20 @@
   "scripts": {
     "dev": "npm --prefix apps/web run dev --",
     "build": "npm --prefix apps/web run build",
-    "start": "npm --prefix apps/web run start"
+    "start": "npm --prefix apps/web run start",
+    "verify:firebase-project": "node scripts/assert-pazar-project.mjs",
+    "deploy:pazar": "npm run verify:firebase-project && firebase deploy --project pazar-16c7b"
   },
   "dependencies": {
-    "@dnd-kit/core": "^6.3.1",
-    "@dnd-kit/sortable": "^10.0.0",
-    "@dnd-kit/utilities": "^3.2.2",
-    "tailwindcss": "^4.1.18"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "workspaces": [
     "apps/*",
     "functions"
-  ]
+  ],
+  "overrides": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
 }

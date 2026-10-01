@@ -37,7 +37,7 @@ export default function CookiePolicyPage() {
         },
         {
           title: "İletişim",
-          body: "Çerez politikamız hakkında sorularınız için info@6nci.com adresine e-posta gönderebilirsiniz.",
+          body: "Çerez politikamız hakkında sorularınız için destek@pazar.example adresine e-posta gönderebilirsiniz.",
         },
       ]}
     />

@@ -170,7 +170,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const product = await getProduct(slug);
 
   const seo = await getSeoSettings();
-  const baseUrl = resolveBaseUrl(seo) || "https://6nci.com";
+  const baseUrl = resolveBaseUrl(seo) || "https://pazar-16c7b.web.app";
 
   const jsonLd = product ? buildProductJsonLd(product, baseUrl) : null;
 

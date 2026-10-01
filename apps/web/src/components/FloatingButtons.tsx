@@ -40,7 +40,7 @@ function getProductWaMessage(): string | null {
 
     const slug = product.slug || product.id || "";
     if (slug) {
-      parts.push(`Link: https://6nci.com/products/${encodeURIComponent(slug)}`);
+      parts.push(`Link: https://pazar-16c7b.web.app/products/${encodeURIComponent(slug)}`);
     }
 
     return parts.join("\n");

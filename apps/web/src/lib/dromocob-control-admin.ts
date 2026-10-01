@@ -46,10 +46,18 @@ function parseServiceAccount() {
 }
 
 function getProjectId(): string {
-  const projectId =
-    process.env.GCLOUD_PROJECT ||
-    process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ||
-    "altincinew";
+  const projectId = String(
+    process.env.FIREBASE_PROJECT_ID ||
+      process.env.GCLOUD_PROJECT ||
+      process.env.GOOGLE_CLOUD_PROJECT ||
+      process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ||
+      ""
+  ).trim();
+
+  if (!projectId) throw new Error("PAZAR Firebase projectId eksik.");
+  if (projectId === "altincinew") {
+    throw new Error("PAZAR kontrol servisi Altıncı Firebase projesine bağlanamaz.");
+  }
 
   return projectId;
 }

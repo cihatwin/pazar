@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     "takı ölçü rehberi",
   ],
   alternates: {
-    canonical: "https://6nci.com/olcu-rehberi",
+    canonical: "https://pazar-16c7b.web.app/olcu-rehberi",
   },
   openGraph: {
     title: "Ölçü Rehberi | 6'ncı Kuyumculuk",
     description:
       "Yüzük, bileklik ve kolye ölçü rehberi. Doğru ölçüyü bulmanız için kapsamlı rehber.",
-    url: "https://6nci.com/olcu-rehberi",
+    url: "https://pazar-16c7b.web.app/olcu-rehberi",
     type: "website",
   },
 };

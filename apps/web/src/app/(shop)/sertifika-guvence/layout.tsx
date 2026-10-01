@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     "güvenli altın alışveriş",
   ],
   alternates: {
-    canonical: "https://6nci.com/sertifika-guvence",
+    canonical: "https://pazar-16c7b.web.app/sertifika-guvence",
   },
   openGraph: {
     title: "Sertifika ve Güvence | 6'ncı Kuyumculuk",
     description:
       "Sertifikalı altın, kalite belgeli ürünler ve güvenli alışveriş garantisi.",
-    url: "https://6nci.com/sertifika-guvence",
+    url: "https://pazar-16c7b.web.app/sertifika-guvence",
     type: "website",
   },
 };

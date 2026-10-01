@@ -26,19 +26,19 @@ const DEFAULTS: SeoSettings = {
     titleTemplate: "%s | 6’ncı Kuyumculuk",
     defaultTitle: "6’ncı Kuyumculuk",
     defaultDescription: "Altın ve mücevher ürünleri. Güncel kurla hesaplanan fiyatlar, hızlı teslimat, güvenli alışveriş.",
-    defaultOgImage: "https://6nci.com/og-default.jpg",
+    defaultOgImage: "https://pazar-16c7b.web.app/og-default.jpg",
     twitterHandle: "",
     themeColor: "#0b0b0b",
   },
   google: { searchConsoleVerification: "", tagManagerId: "", analyticsMeasurementId: "" },
   robots: { index: true, follow: true, noindexReason: "" },
   site: {
-    primaryUrl: "https://6nci.com",
-    fallbackUrl: "https://altinc-kuyumculuk-web--altincinew.europe-west4.hosted.app",
+    primaryUrl: "https://pazar-16c7b.web.app",
+    fallbackUrl: "https://pazar-16c7b.web.app",
     canonicalMode: "auto",
   },
   openGraph: { defaultType: "website", locale: "tr_TR" },
-  jsonld: { enabled: true, organizationName: "6’ncı Kuyumculuk", organizationLogo: "https://6nci.com/logo.png", sameAs: [] },
+  jsonld: { enabled: true, organizationName: "6’ncı Kuyumculuk", organizationLogo: "https://pazar-16c7b.web.app/logo.png", sameAs: [] },
 };
 
 function s(v: any) { return String(v ?? "").trim(); }

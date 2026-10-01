@@ -51,7 +51,7 @@ export const sendVerifyCode = onCall(
 
     await admin.firestore().collection("mail").add({
   to: email,
-  from: "6nci Kuyumculuk <no-reply@6nci.com>",
+  from: "6nci Kuyumculuk <no-reply@pazar-16c7b.web.app>",
   message: {
     subject: "6nci Kuyumculuk Doğrulama Kodunuz",
     html: `

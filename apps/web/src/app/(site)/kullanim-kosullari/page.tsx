@@ -41,7 +41,7 @@ export default function TermsPage() {
         },
         {
           title: "İletişim ve Uyuşmazlık",
-          body: "Kullanıma ilişkin talepler ve bildirimler için info@6nci.com üzerinden veya iletişim kanalları üzerinden bize ulaşılabilir. Tüketici işlemlerinde yürürlükteki mevzuat esas alınır.",
+          body: "Kullanıma ilişkin talepler ve bildirimler için destek@pazar.example üzerinden veya iletişim kanalları üzerinden bize ulaşılabilir. Tüketici işlemlerinde yürürlükteki mevzuat esas alınır.",
         },
       ]}
     />

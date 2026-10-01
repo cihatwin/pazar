@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     const db = adminDb();
 
     // WhatsApp numarasını Firestore'dan oku (admin paneldeki merkezi ayar)
-    let waNumber = "905078482448";
+    let waNumber = "900000000000";
     try {
       const settingsSnap = await db.doc("settings/site").get();
       const settingsData = settingsSnap.data() as any;
@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td style="border-radius:10px;background:linear-gradient(135deg,#d4af37,#b8941f);padding:1px">
-                        <a href="https://6nci.com/shop" target="_blank" style="display:inline-block;padding:15px 40px;background:linear-gradient(135deg,#d4af37,#b8941f);color:#ffffff;text-decoration:none;border-radius:10px;font-weight:800;font-size:14px;font-family:Arial,sans-serif;letter-spacing:0.5px">MAĞAZAYA GİT &rarr;</a>
+                        <a href="https://pazar-16c7b.web.app/shop" target="_blank" style="display:inline-block;padding:15px 40px;background:linear-gradient(135deg,#d4af37,#b8941f);color:#ffffff;text-decoration:none;border-radius:10px;font-weight:800;font-size:14px;font-family:Arial,sans-serif;letter-spacing:0.5px">MAĞAZAYA GİT &rarr;</a>
                       </td>
                     </tr>
                   </table>
@@ -126,9 +126,9 @@ export async function POST(req: NextRequest) {
               <!-- Social links placeholder -->
               <tr>
                 <td align="center" style="padding-bottom:16px">
-                  <a href="https://instagram.com/6ncikuyumculuk" target="_blank" style="display:inline-block;margin:0 8px;color:#b8941f;text-decoration:none;font-size:13px;font-weight:600;font-family:Arial,sans-serif">Instagram</a>
+                  <a href="https://www.instagram.com/" target="_blank" style="display:inline-block;margin:0 8px;color:#b8941f;text-decoration:none;font-size:13px;font-weight:600;font-family:Arial,sans-serif">Instagram</a>
                   <span style="color:#d4cfc6">&bull;</span>
-                  <a href="https://6nci.com" target="_blank" style="display:inline-block;margin:0 8px;color:#b8941f;text-decoration:none;font-size:13px;font-weight:600;font-family:Arial,sans-serif">Web Site</a>
+                  <a href="https://pazar-16c7b.web.app" target="_blank" style="display:inline-block;margin:0 8px;color:#b8941f;text-decoration:none;font-size:13px;font-weight:600;font-family:Arial,sans-serif">Web Site</a>
                   <span style="color:#d4cfc6">&bull;</span>
                   <a href="https://wa.me/${waNumber}" target="_blank" style="display:inline-block;margin:0 8px;color:#b8941f;text-decoration:none;font-size:13px;font-weight:600;font-family:Arial,sans-serif">WhatsApp</a>
                 </td>

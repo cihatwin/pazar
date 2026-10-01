@@ -338,7 +338,7 @@ export default async function RootLayout({
                 image: seo.jsonld.organizationLogo || undefined,
                 url: baseUrl || undefined,
                 telephone: seo.jsonld.phone || "+90 507 848 24 48",
-                email: seo.jsonld.email || "info@6nci.com",
+                email: seo.jsonld.email || "destek@pazar.example",
                 priceRange: seo.jsonld.priceRange || "₺₺₺",
                 address: {
                   "@type": "PostalAddress",

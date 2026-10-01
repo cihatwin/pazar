@@ -17,7 +17,7 @@ const COMPANY_NAME =
   "BİZİM 6 KUYUMCULUK İNŞAAT EMLAK SANAYİ TİCARET LİMİTED ŞİRKETİ";
 const COMPANY_ADDRESS =
   "Cumhuriyet, Belediye Cd. No:9, 48303 Fethiye/Muğla";
-const COMPANY_EMAIL = "info@6nci.com";
+const COMPANY_EMAIL = "destek@pazar.example";
 
 export default function LegalPageTemplate({
   eyebrow,

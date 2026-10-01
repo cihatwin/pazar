@@ -1,0 +1,53 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isSuperAdmin() {
+      return isAuthenticated() && request.auth.token.role == 'super_admin';
+    }
+    
+    function isOwner(uid) {
+      return isAuthenticated() && request.auth.uid == uid;
+    }
+
+    // 1. Users
+    match /users/{userId} {
+      allow read: if isSuperAdmin() || isOwner(userId);
+      allow write: if isSuperAdmin() || isOwner(userId);
+    }
+    
+    // 2. Seller Applications
+    match /seller_applications/{applicationId} {
+      // Anyone can create an application (they become the owner by auth uid)
+      allow create: if isAuthenticated() && request.resource.data.uid == request.auth.uid;
+      allow read: if isSuperAdmin() || isOwner(applicationId);
+      allow update: if isSuperAdmin() || isOwner(applicationId);
+    }
+
+    // 3. Products
+    match /seller_products/{productId} {
+      // Public can read approved products
+      allow read: if resource.data.status == 'approved' || isSuperAdmin() || isOwner(resource.data.ownerUid);
+      allow create: if isAuthenticated() && request.resource.data.ownerUid == request.auth.uid;
+      allow update, delete: if isSuperAdmin() || isOwner(resource.data.ownerUid);
+    }
+
+    // 4. Orders
+    match /seller_orders/{orderId} {
+      allow read: if isSuperAdmin() || isOwner(resource.data.sellerUid) || isOwner(resource.data.customerUid);
+      allow update: if isSuperAdmin() || isOwner(resource.data.sellerUid);
+      allow create: if isAuthenticated(); // Assuming customers can create orders
+    }
+
+    // Fallback: Super Admin can do everything
+    match /{document=**} {
+      allow read, write: if isSuperAdmin();
+    }
+  }
+}

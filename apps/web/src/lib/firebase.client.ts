@@ -16,6 +16,17 @@ type WebAppConfig = {
   measurementId?: string;
 };
 
+const FORBIDDEN_FIREBASE_PROJECTS = new Set(["altincinew"]);
+
+function assertIndependentProject(config: WebAppConfig): WebAppConfig {
+  const projectId = String(config.projectId || "").trim();
+  if (!projectId) throw new Error("Firebase projectId eksik.");
+  if (FORBIDDEN_FIREBASE_PROJECTS.has(projectId)) {
+    throw new Error("PAZAR uygulaması Altıncı Firebase projesine bağlanamaz.");
+  }
+  return config;
+}
+
 function safeJsonParse<T>(raw: string): T | null {
   try {
     return JSON.parse(raw) as T;
@@ -28,7 +39,7 @@ function readConfig(): WebAppConfig {
   const rawJson = process.env.NEXT_PUBLIC_FIREBASE_WEBAPP_CONFIG || "";
   if (rawJson) {
     const parsed = safeJsonParse<WebAppConfig>(rawJson);
-    if (parsed?.apiKey && parsed?.projectId) return parsed;
+    if (parsed?.apiKey && parsed?.projectId) return assertIndependentProject(parsed);
     throw new Error("NEXT_PUBLIC_FIREBASE_WEBAPP_CONFIG var ama JSON geçersiz.");
   }
 
@@ -36,7 +47,7 @@ function readConfig(): WebAppConfig {
   const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "";
 
   if (apiKey && projectId) {
-    return {
+    return assertIndependentProject({
       apiKey,
       projectId,
       authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || undefined,
@@ -44,7 +55,7 @@ function readConfig(): WebAppConfig {
       messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || undefined,
       appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || undefined,
       measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || undefined,
-    };
+    });
   }
 
   throw new Error("Firebase client config missing. NEXT_PUBLIC env’leri kontrol et.");

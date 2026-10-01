@@ -332,13 +332,13 @@ const SITE_COLUMNS: FooterColumn[] = [
 ];
 
 const DEFAULT_ETBIS_LINK =
-  "https://etbis.ticaret.gov.tr/tr/SiteSorgulamaSonuc?siteId=c8bc0d26-be30-4592-9f26-4cd94b475a40";
+  "https://etbis.ticaret.gov.tr/";
 
 const DEFAULT_CONTACT: ContactSettings = {
   phone: "+90 507 848 24 48",
-  email: "info@6nci.com",
+  email: "destek@pazar.example",
   address: "Cumhuriyet, Belediye Cd. No:9, 48303 Fethiye/Muğla",
-  whatsapp: "905078482448",
+  whatsapp: "900000000000",
 };
 
 const DEFAULT_CHIPS: LocaleText[] = [

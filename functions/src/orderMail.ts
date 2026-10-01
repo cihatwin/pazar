@@ -575,7 +575,7 @@ async function queueMail(params: {
 
   await mailRef.create({
     to,
-    from: "6nci Kuyumculuk <no-reply@6nci.com>",
+    from: "6nci Kuyumculuk <no-reply@pazar-16c7b.web.app>",
     message: {
       subject: params.subject,
       html: params.html,

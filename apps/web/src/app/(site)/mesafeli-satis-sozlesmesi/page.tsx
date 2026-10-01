@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Mesafeli satış sözleşmesi. Sipariş, teslimat ve satış sürecine ilişkin genel hükümler.",
   alternates: {
-    canonical: "https://6nci.com/mesafeli-satis-sozlesmesi",
+    canonical: "https://pazar-16c7b.web.app/mesafeli-satis-sozlesmesi",
   },
 };
 

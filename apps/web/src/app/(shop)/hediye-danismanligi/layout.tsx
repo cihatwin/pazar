@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     "altın takı hediye",
   ],
   alternates: {
-    canonical: "https://6nci.com/hediye-danismanligi",
+    canonical: "https://pazar-16c7b.web.app/hediye-danismanligi",
   },
   openGraph: {
     title: "Hediye Danışmanlığı | 6'ncı Kuyumculuk",
     description:
       "Sevdiklerinize en doğru hediyeyi seçmeniz için kişisel danışmanlık hizmeti.",
-    url: "https://6nci.com/hediye-danismanligi",
+    url: "https://pazar-16c7b.web.app/hediye-danismanligi",
     type: "website",
   },
 };

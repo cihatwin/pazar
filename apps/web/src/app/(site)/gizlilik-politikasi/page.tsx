@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
         },
         {
           title: "Kullanıcı Hakları",
-          body: "Kullanıcılar; verilerine erişme, düzeltme, silme, güncelleme ve işlenmesine dair bilgi talep etme hakkına sahiptir. Talepler için info@6nci.com adresi veya destek alanı kullanılabilir.",
+          body: "Kullanıcılar; verilerine erişme, düzeltme, silme, güncelleme ve işlenmesine dair bilgi talep etme hakkına sahiptir. Talepler için destek@pazar.example adresi veya destek alanı kullanılabilir.",
         },
       ]}
     />

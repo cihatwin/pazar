@@ -58,7 +58,7 @@
 | `apps/web/src/components/common/WhatsAppBubble.tsx` | 27 | `+90XXXXXXXXXX` default prop |
 | `apps/web/src/app/(site)/checkout/success/[id]/page.tsx` | 678 | `wa.me/` ← **BOŞ numara!** |
 
-**Düzeltme:** Tüm yerlerde doğru numara → `905078482448` (iletişim sayfasındaki gibi)
+**Düzeltme:** Tüm yerlerde doğru numara → `900000000000` (iletişim sayfasındaki gibi)
 
 ---
 

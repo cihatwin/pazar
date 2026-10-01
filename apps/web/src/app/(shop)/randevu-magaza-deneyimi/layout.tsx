@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     "mücevher deneyimi",
   ],
   alternates: {
-    canonical: "https://6nci.com/randevu-magaza-deneyimi",
+    canonical: "https://pazar-16c7b.web.app/randevu-magaza-deneyimi",
   },
   openGraph: {
     title: "Randevu & Mağaza Deneyimi | 6'ncı Kuyumculuk",
     description:
       "Fethiye mağazamızda kişiye özel danışmanlık ve mücevher deneyimi için randevu alın.",
-    url: "https://6nci.com/randevu-magaza-deneyimi",
+    url: "https://pazar-16c7b.web.app/randevu-magaza-deneyimi",
     type: "website",
   },
 };

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "KVKK aydınlatma metni. Kişisel verilerin korunmasına ilişkin yasal bilgilendirme.",
   alternates: {
-    canonical: "https://6nci.com/kvkk-aydinlatma-metni",
+    canonical: "https://pazar-16c7b.web.app/kvkk-aydinlatma-metni",
   },
 };
 
@@ -44,7 +44,7 @@ export default function KvkkPage() {
         },
         {
           title: "Haklarınız",
-          body: "KVKK'nın 11. maddesi kapsamında verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini isteme, silme talebinde bulunma ve bilgi talep etme hakkına sahipsiniz. Taleplerinizi info@6nci.com adresine iletebilirsiniz.",
+          body: "KVKK'nın 11. maddesi kapsamında verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini isteme, silme talebinde bulunma ve bilgi talep etme hakkına sahipsiniz. Taleplerinizi destek@pazar.example adresine iletebilirsiniz.",
         },
       ]}
     />

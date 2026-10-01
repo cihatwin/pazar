@@ -4,22 +4,22 @@ importScripts("https://www.gstatic.com/firebasejs/10.13.2/firebase-messaging-com
 
 firebase.initializeApp({
 
-  apiKey: "AIzaSyDakvXlO6zHW9qEuUU9j6MYHpsHJ3Vp9LM",
+  apiKey: "AIzaSyAgnFYGaJ0pp20OgV81-e8u87Tv3ojboy4",
 
-  authDomain: "altincinew.firebaseapp.com",
+  authDomain: "pazar-16c7b.firebaseapp.com",
 
-  projectId: "altincinew",
+  projectId: "pazar-16c7b",
 
-  messagingSenderId: "1092460462944",
+  messagingSenderId: "254297328162",
 
-  appId: "1:1092460462944:web:e2e347ab246bf141789405",
+  appId: "1:254297328162:web:940ea74d22603ebd5e587b",
 
 });
 
 const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage((payload) => {
-  const title = payload?.notification?.title || "6’ncı Kuyumculuk";
+  const title = payload?.notification?.title || "PAZAR.";
   const body = payload?.notification?.body || "Yeni bildirimin var.";
   const image = payload?.notification?.image;
   const url = payload?.data?.url || "/";

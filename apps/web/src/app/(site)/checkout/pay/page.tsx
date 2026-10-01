@@ -1892,7 +1892,7 @@ function AgreementModal({
 
         ŞİRKETİ. Adres: Cumhuriyet, Belediye Cd. No:9, 48303 Fethiye/Muğla.
 
-        E-posta: info@6nci.com.
+        E-posta: destek@pazar.example.
 
       </p>
 
@@ -2022,7 +2022,7 @@ function AgreementModal({
 
         ŞİRKETİ. Adres: Cumhuriyet, Belediye Cd. No:9, 48303 Fethiye/Muğla.
 
-        E-posta: info@6nci.com.
+        E-posta: destek@pazar.example.
 
       </p>
 

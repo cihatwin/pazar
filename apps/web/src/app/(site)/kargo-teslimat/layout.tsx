@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     "sigortalı kargo",
   ],
   alternates: {
-    canonical: "https://6nci.com/kargo-teslimat",
+    canonical: "https://pazar-16c7b.web.app/kargo-teslimat",
   },
   openGraph: {
     title: "Kargo ve Teslimat | 6'ncı Kuyumculuk",
     description:
       "Sigortalı kargo, teslimat süreleri ve ücretsiz kargo koşulları.",
-    url: "https://6nci.com/kargo-teslimat",
+    url: "https://pazar-16c7b.web.app/kargo-teslimat",
     type: "website",
   },
 };

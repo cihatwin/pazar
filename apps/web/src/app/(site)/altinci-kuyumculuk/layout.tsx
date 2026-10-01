@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     "kuyumcu fethiye",
   ],
   alternates: {
-    canonical: "https://6nci.com/altinci-kuyumculuk",
+    canonical: "https://pazar-16c7b.web.app/altinci-kuyumculuk",
   },
   openGraph: {
     title: "Altıncı Kuyumculuk Hakkında | 6'ncı Kuyumculuk",
     description:
       "Markamızın hikâyesi, vizyonumuz ve sertifikalı altın takı anlayışımız.",
-    url: "https://6nci.com/altinci-kuyumculuk",
+    url: "https://pazar-16c7b.web.app/altinci-kuyumculuk",
     type: "website",
   },
 };

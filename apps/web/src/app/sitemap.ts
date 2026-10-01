@@ -216,7 +216,7 @@ function productUrlFromDoc(doc: AnyMap): string {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const seo = CATALOG_RESET_MODE ? null : await getSeoSettings();
   const resetBase = process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:9002";
-  const base = cleanUrl(seo ? (resolveBaseUrl(seo) || "https://6nci.com") : resetBase);
+  const base = cleanUrl(seo ? (resolveBaseUrl(seo) || "https://pazar-16c7b.web.app") : resetBase);
 
   const sitemap: MetadataRoute.Sitemap = [];
   const seen = new Set<string>();

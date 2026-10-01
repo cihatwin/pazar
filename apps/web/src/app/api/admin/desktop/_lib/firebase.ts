@@ -13,6 +13,9 @@ function initAdmin() {
     if (!projectId || !clientEmail || !privateKey) {
         throw new Error("Firebase Admin env eksik.");
     }
+    if (projectId === "altincinew") {
+        throw new Error("PAZAR masaüstü API'si Altıncı Firebase projesine bağlanamaz.");
+    }
 
     initializeApp({
         credential: cert({

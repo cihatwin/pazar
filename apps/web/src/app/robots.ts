@@ -32,8 +32,8 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: [
-      "https://6nci.com/sitemap.xml",
+      "https://pazar-16c7b.web.app/sitemap.xml",
     ],
-    host: "https://6nci.com",
+    host: "https://pazar-16c7b.web.app",
   };
 }

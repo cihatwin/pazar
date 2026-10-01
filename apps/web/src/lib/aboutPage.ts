@@ -152,7 +152,7 @@ export async function getAboutPage(): Promise<AboutPageDoc> {
           ? x.cta?.cards
           : [
               { title: "Telefon", text: "+90 507 848 24 48" },
-              { title: "E-posta", text: "info@6nci.com" },
+              { title: "E-posta", text: "destek@pazar.example" },
               { title: "Adres", text: "Cumhuriyet, Belediye Cd. No:9, Fethiye" },
               { title: "Çalışma Saatleri", text: "Her gün 09:00 – 22:00" },
             ],

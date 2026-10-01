@@ -3737,7 +3737,7 @@ export default function AdminProductEdit({ params }: { params: { id: string } })
             </div>
 
             <div className={s.googleUrl}>
-              6nci.com{form.advanced?.seo?.canonical || buildCanonical(form)}
+              pazar-16c7b.web.app{form.advanced?.seo?.canonical || buildCanonical(form)}
             </div>
 
             <div className={s.googleDesc}>

@@ -66,7 +66,7 @@ const DEFAULT_SETTINGS: RefundSettings = {
     companyName: "6NCI KUYUMCULUK",
     fullName: "6NCI KUYUMCULUK",
     phone: "05304788298",
-    email: "info@6nci.com",
+    email: "destek@pazar.example",
     city: "MUĞLA",
     district: "FETHİYE",
     postalCode: "48303",
@@ -667,7 +667,7 @@ async function deleteAllRefundRequests() {
             <input
               value={settings.returnReceiver.email}
               onChange={(e) => updateReceiver("email", e.target.value)}
-              placeholder="info@6nci.com"
+              placeholder="destek@pazar.example"
             />
           </label>
 

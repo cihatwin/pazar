@@ -36,6 +36,9 @@ function initAdmin() {
     if (!projectId || !clientEmail || !privateKey) {
         throw new Error("Firebase Admin env eksik: FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY");
     }
+    if (projectId === "altincinew") {
+        throw new Error("PAZAR SEO API'si Altıncı Firebase projesine bağlanamaz.");
+    }
 
     initializeApp({
         credential: cert({

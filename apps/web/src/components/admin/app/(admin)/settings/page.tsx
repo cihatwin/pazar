@@ -1061,10 +1061,10 @@ function SiteSettingsAdminPageInner() {
                   className={s.input}
                   value={cfg.contact?.whatsapp || ""}
                   onChange={(e) => setField("contact.whatsapp", e.target.value)}
-                  placeholder="905078482448"
+                  placeholder="900000000000"
                 />
                 <div className={s.inputHint}>
-                  Ülke kodu ile, boşluksuz. Örn: 905078482448
+                  Ülke kodu ile, boşluksuz. Örn: 900000000000
                 </div>
               </div>
             </div>
@@ -1088,7 +1088,7 @@ function SiteSettingsAdminPageInner() {
                   className={s.input}
                   value={cfg.contact?.email || ""}
                   onChange={(e) => setField("contact.email", e.target.value)}
-                  placeholder="info@6nci.com"
+                  placeholder="destek@pazar.example"
                 />
               </div>
 

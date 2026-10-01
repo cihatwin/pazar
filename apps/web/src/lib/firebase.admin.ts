@@ -24,13 +24,21 @@ function parseServiceAccountFromEnv() {
 export function initAdmin() {
   if (getApps().length) return getApps()[0];
 
-  const projectId =
-    process.env.GCLOUD_PROJECT ||
-    process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ||
-    "altincinew";
-
   const emulatorHost = process.env.FIRESTORE_EMULATOR_HOST || "";
   const serviceAccount = parseServiceAccountFromEnv();
+  const projectId = String(
+    serviceAccount?.project_id ||
+      process.env.FIREBASE_PROJECT_ID ||
+      process.env.GCLOUD_PROJECT ||
+      process.env.GOOGLE_CLOUD_PROJECT ||
+      process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ||
+      ""
+  ).trim();
+
+  if (!projectId) throw new Error("PAZAR Firebase projectId eksik.");
+  if (projectId === "altincinew") {
+    throw new Error("PAZAR sunucusu Altıncı Firebase projesine bağlanamaz.");
+  }
 
   // Local emulator
   if (emulatorHost) {

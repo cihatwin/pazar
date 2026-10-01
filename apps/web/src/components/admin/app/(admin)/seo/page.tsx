@@ -92,7 +92,7 @@ const DEFAULTS: SeoSettings = {
 
       "Altın ve mücevher ürünleri. Güncel kurla hesaplanan fiyatlar, hızlı teslimat, güvenli alışveriş.",
 
-    defaultOgImage: "https://6nci.com/og-default.jpg",
+    defaultOgImage: "https://pazar-16c7b.web.app/og-default.jpg",
 
     twitterHandle: "",
 
@@ -138,9 +138,9 @@ const DEFAULTS: SeoSettings = {
 
   site: {
 
-    primaryUrl: "https://6nci.com",
+    primaryUrl: "https://pazar-16c7b.web.app",
 
-    fallbackUrl: "https://altinc-kuyumculuk-web--altincinew.europe-west4.hosted.app",
+    fallbackUrl: "https://pazar-16c7b.web.app",
 
     canonicalMode: "auto",
 
@@ -160,7 +160,7 @@ const DEFAULTS: SeoSettings = {
 
     organizationName: "6’ncı Kuyumculuk",
 
-    organizationLogo: "https://6nci.com/logo.png",
+    organizationLogo: "https://pazar-16c7b.web.app/logo.png",
 
     sameAs: [],
 

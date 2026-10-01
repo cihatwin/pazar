@@ -150,7 +150,7 @@ function pickStoreReturnAddress(settingsData: any) {
     mngReturnAddress?.email,
     mng?.senderEmail,
     process.env.RETURN_STORE_EMAIL,
-    "info@6nci.com"
+    "destek@pazar.example"
   );
 
   const city = firstFilled(
@@ -447,7 +447,7 @@ export function buildReturnShipmentInputFromRefund(
   }
 
   if (!safeStr(input.recipient.email)) {
-    input.recipient.email = "info@6nci.com";
+    input.recipient.email = "destek@pazar.example";
   }
 
   if (!safeStr(input.address.city)) {

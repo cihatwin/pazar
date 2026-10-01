@@ -33,7 +33,7 @@ type ProductDoc = {
 const SITE_URL =
     process.env.NEXT_PUBLIC_SITE_URL ||
     process.env.NEXT_PUBLIC_APP_URL ||
-    "https://6nci.com";
+    "https://pazar-16c7b.web.app";
 
 const BRAND_NAME = "6'ncı Kuyumculuk";
 

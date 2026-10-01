@@ -114,14 +114,14 @@ const BELIEFS_EN = [
 
 const CTA_CARDS_TR = [
   { title: "Telefon", text: "+90 507 848 24 48" },
-  { title: "E-posta", text: "info@6nci.com" },
+  { title: "E-posta", text: "destek@pazar.example" },
   { title: "Adres", text: "Cumhuriyet, Belediye Cd. No:9, Fethiye" },
   { title: "Çalışma Saatleri", text: "Her gün 09:00 – 22:00" },
 ];
 
 const CTA_CARDS_EN = [
   { title: "Phone", text: "+90 507 848 24 48" },
-  { title: "Email", text: "info@6nci.com" },
+  { title: "Email", text: "destek@pazar.example" },
   { title: "Address", text: "Cumhuriyet, Belediye Cd. No:9, Fethiye" },
   { title: "Business Hours", text: "Every day 09:00 – 22:00" },
 ];

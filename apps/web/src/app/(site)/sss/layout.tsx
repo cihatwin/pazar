@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     "kuyumcu kargo",
   ],
   alternates: {
-    canonical: "https://6nci.com/sss",
+    canonical: "https://pazar-16c7b.web.app/sss",
   },
   openGraph: {
     title: "Sıkça Sorulan Sorular | 6'ncı Kuyumculuk",
     description:
       "Sipariş, ödeme, kargo, iade ve ürün bilgisi hakkında tüm cevaplar.",
-    url: "https://6nci.com/sss",
+    url: "https://pazar-16c7b.web.app/sss",
     type: "website",
   },
 };

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Sipariş öncesi ön bilgilendirme formu. Ürün, ödeme, teslimat ve iade süreçlerine ilişkin özet bilgilendirme.",
   alternates: {
-    canonical: "https://6nci.com/on-bilgilendirme-formu",
+    canonical: "https://pazar-16c7b.web.app/on-bilgilendirme-formu",
   },
 };
 
@@ -20,7 +20,7 @@ export default function PreInformationFormPage() {
       sections={[
         {
           title: "Satıcı Bilgisi",
-          body: "Satıcı unvanı: BİZİM 6 KUYUMCULUK İNŞAAT EMLAK SANAYİ TİCARET LİMİTED ŞİRKETİ. Adres: Cumhuriyet, Belediye Cd. No:9, 48303 Fethiye/Muğla. E-posta: info@6nci.com.",
+          body: "Satıcı unvanı: BİZİM 6 KUYUMCULUK İNŞAAT EMLAK SANAYİ TİCARET LİMİTED ŞİRKETİ. Adres: Cumhuriyet, Belediye Cd. No:9, 48303 Fethiye/Muğla. E-posta: destek@pazar.example.",
         },
         {
           title: "Ürün ve Fiyat",
@@ -36,7 +36,7 @@ export default function PreInformationFormPage() {
         },
         {
           title: "İade ve Destek",
-          body: "İade, iptal ve destek süreçleri için platform içi destek alanı veya info@6nci.com adresi üzerinden iletişim kurulabilir.",
+          body: "İade, iptal ve destek süreçleri için platform içi destek alanı veya destek@pazar.example adresi üzerinden iletişim kurulabilir.",
         },
       ]}
     />

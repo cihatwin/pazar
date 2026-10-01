@@ -21,7 +21,7 @@
 
 - **Node:** 22
 - **Next.js:** 14.2.35
-- **Firebase Proje:** `altincinew`
+- **Firebase Proje:** `pazar-16c7b` (Altıncı projesi `altincinew` kesinlikle kullanılmaz)
 - **Port:** dev server `9002`
 - **Admin route pattern:** `app/admin/(admin)/xxx/page.tsx` → `export { default } from "@/components/admin/app/(admin)/xxx/page"`
 - **Firestore:** products, orders, categories, rates, stock_alerts, support_threads, reviews, site_options

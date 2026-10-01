@@ -2492,13 +2492,13 @@ export default function ProductClient({ slug }: { slug: string }) {
                     "@type": "ListItem",
                     position: 1,
                     name: "Ana Sayfa",
-                    item: "https://6nci.com",
+                    item: "https://pazar-16c7b.web.app",
                   },
                   {
                     "@type": "ListItem",
                     position: 2,
                     name: "Magaza",
-                    item: "https://6nci.com/shop",
+                    item: "https://pazar-16c7b.web.app/shop",
                   },
                   ...(cats.length
                     ? [
@@ -2506,7 +2506,7 @@ export default function ProductClient({ slug }: { slug: string }) {
                         "@type": "ListItem",
                         position: 3,
                         name: pickText(cats[0].name, loc),
-                        item: `https://6nci.com/shop?cat=${encodeURIComponent(cats[0].slug)}`,
+                        item: `https://pazar-16c7b.web.app/shop?cat=${encodeURIComponent(cats[0].slug)}`,
                       },
                       {
                         "@type": "ListItem",

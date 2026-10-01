@@ -348,9 +348,11 @@ export async function POST(req: NextRequest) {
       debug: {
         envHost: process.env.FIRESTORE_EMULATOR_HOST || null,
         projectId:
+          process.env.FIREBASE_PROJECT_ID ||
           process.env.GCLOUD_PROJECT ||
+          process.env.GOOGLE_CLOUD_PROJECT ||
           process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ||
-          "altincinew",
+          null,
         categoryId,
         categorySlug,
         matchedCount: matchedDocs.length,
